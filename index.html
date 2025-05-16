@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Cantinho</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #f0f8ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+
+        #content {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+
+        .photo {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 4px solid #87cefa;
+            position: relative;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            color: #1e90ff;
+            font-size: 30px;
+            animation: float 4s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); opacity: 1; }
+            50% { transform: translateY(-20px); opacity: 0.7; }
+            100% { transform: translateY(0px); opacity: 1; }
+        }
+
+        .heart:nth-child(2) { top: -20px; left: -20px; }
+        .heart:nth-child(3) { top: -20px; right: -20px; }
+        .heart:nth-child(4) { bottom: -20px; left: -20px; }
+        .heart:nth-child(5) { bottom: -20px; right: -20px; }
+        .heart:nth-child(6) { top: 50%; left: -40px; transform: translateY(-50%); }
+        .heart:nth-child(7) { top: 50%; right: -40px; transform: translateY(-50%); }
+
+        .message-box {
+            width: 80%;
+            max-width: 400px;
+            padding: 10px;
+            border: 2px solid #87cefa;
+            border-radius: 10px;
+            background-color: #fff;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        #btnMostrar {
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        #btnMostrar:hover {
+            background-color: #104e8b;
+        }
+
+    </style>
+</head>
+<body>
+
+    <button id="btnMostrar">Clique aqui 💙</button>
+
+    <div id="content">
+        <div class="container">
+            <img src="c:\Users\iago\Pictures\fotos com meu amor\WhatsApp Image 2025-05-15 at 21.24.00.jpeg" alt="Foto do casal" class="photo">
+            <div class="heart">💙</div>
+            <div class="heart">💙</div>
+            <div class="heart">💙</div>
+            <div class="heart">💙</div>
+            <div class="heart">💙</div>
+            <div class="heart">💙</div>
+        </div>
+
+        <div class="message-box">
+            Aqui vai sua mensagem fofa... 💕<br>
+            Por exemplo: Eu e você contra o mundo!
+        </div>
+
+        <audio id="musica" src="c:\Users\iago\Documents\html2\projeto amorzinho\Love Songs (Bonus) (mp3cut.net).mp3"></audio>
+    </div>
+
+    <script>
+        document.getElementById('btnMostrar').addEventListener('click', function() {
+            document.getElementById('content').style.display = 'flex';
+            document.getElementById('btnMostrar').style.display = 'none';
+            document.getElementById('musica').play();
+        });
+    </script>
+
+</body>
+</html>
